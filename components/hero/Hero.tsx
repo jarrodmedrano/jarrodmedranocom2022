@@ -4,6 +4,7 @@ import { Section } from "../layout/Section";
 import { VerticalFeatureRow } from "../feature/VerticalFeatureRow";
 import NavbarTwoColumns from "../nav/Nav";
 import { Button } from "../button/Button";
+import Contact from "../../pages/contact";
 
 interface Data {
   email: string;
@@ -55,13 +56,9 @@ const Hero = () => {
           }
         />
       </Section>
-      {/* 
-      <form>
-        <input type="text" name="email" value={email} />
-        <input type="text" name="name" value={name} />
-        <textarea name="message" value={message} />
-        <button type="submit">Search</button>
-      </form> */}
+      <Section yPadding="pt-5 pb-32">
+        <Contact />
+      </Section>
     </Background>
   );
 };
