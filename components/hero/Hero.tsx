@@ -23,43 +23,20 @@ const Hero = () => {
   // const { email, name, message } = data;
 
   return (
-    <Background color="bg-gray-100">
-      <Section yPadding="py-6">
-        <NavbarTwoColumns>
-          <li className={tw`mr-5`}>
-            <a href="https://github.com/jarrodmedrano" target="_blank">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/jarrod-medrano/"
-              target="_blank"
-            >
-              Linkedin
-            </a>
-          </li>
-        </NavbarTwoColumns>
-      </Section>
-
-      <Section yPadding="pt-20 pb-32">
-        <VerticalFeatureRow
-          title="Jarrod Medrano"
-          subtitle="— Software Engineer"
-          description="Hi, I'm Jarrod. I've been working in the tech industry for many years. Right now I specialize in frontend development."
-          image="/assets/images/feature.svg"
-          imageAlt="First feature alt text"
-          button={
-            <a href="mailto:jarrod@slashclick.com">
-              <Button xl>Contact Me</Button>
-            </a>
-          }
-        />
-      </Section>
-      <Section yPadding="pt-5 pb-32">
-        <Contact />
-      </Section>
-    </Background>
+    <Section yPadding="pt-20 pb-32">
+      <VerticalFeatureRow
+        title="Jarrod Medrano"
+        subtitle="— Software Engineer"
+        description="Hi, I'm Jarrod. I'm a full-time software developer and I do frontend development (most of the time)"
+        image="/assets/images/feature.svg"
+        imageAlt="First feature alt text"
+        button={
+          <Section yPadding="pt-5 pb-32">
+            <Contact />
+          </Section>
+        }
+      />
+    </Section>
   );
 };
 

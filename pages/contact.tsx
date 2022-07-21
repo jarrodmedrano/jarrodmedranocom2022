@@ -60,7 +60,10 @@ const Contact = () => {
     setLoading(false);
   };
   return (
-    <form className={tw`w-full max-w-lg`} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={tw`w-full max-w-lg text-left`}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className={tw`flex flex-wrap -mx-3 mb-6`}>
         <div className={tw`w-full px-3`}>
           <label

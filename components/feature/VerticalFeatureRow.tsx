@@ -12,8 +12,8 @@ type IVerticalFeatureRowProps = {
 
 const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
   return (
-    <div className={tw`mt-20 flex flex-wrap items-center`}>
-      <div className="w-full flex justify-center  sm:w-1/2 p-6">
+    <div className={tw`mt-20 flex flex-wrap items-start`}>
+      <div className="w-full flex justify-center sm:w-1/2 p-6">
         <div
           className={tw`w-80 h-80
  xl-mr-2 rounded-full overflow-hidden justify-center align-center relative`}
