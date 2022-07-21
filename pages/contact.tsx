@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
-import Loader from "../components/Loader";
-import {
-  Container,
-  Row,
-  Col,
-  Textarea,
-  Text,
-  Input,
-  Button,
-  Spacer,
-} from "@nextui-org/react";
+import { Text } from "@nextui-org/react";
 import { tw } from "twind";
 
 const recaptchaRef = React.createRef();

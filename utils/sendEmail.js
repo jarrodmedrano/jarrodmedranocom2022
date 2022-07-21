@@ -15,14 +15,14 @@ const sendEmail = async ({ name, email, message }) => {
         {
           to: [
             {
-              email: "info@slashclick.com",
+              email: "jarrod@jarrodmedrano.com",
             },
           ],
-          subject: "Contact from slashclick.com",
+          subject: "Contact from jarrodmedrano.com",
         },
       ],
       from: {
-        email: "info@slashclick.com",
+        email: "jarrod@jarrodmedrano.com",
         name: name,
       },
       content: [
