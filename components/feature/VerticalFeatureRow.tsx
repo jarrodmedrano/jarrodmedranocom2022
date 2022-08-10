@@ -18,19 +18,12 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
           className={tw`w-80 h-80
  xl-mr-2 rounded-full overflow-hidden justify-center align-center relative`}
         >
-          <picture className={tw`absolute -my-10`}>
+          <picture className={tw`absolute`}>
             <img
-              sizes="(max-width: 1400px) 100vw, 1400px"
-              srcSet="
-portrait/jarrod-medrano_rxgtrq_c_scale,w_200.jpg 200w,
-portrait/jarrod-medrano_rxgtrq_c_scale,w_519.jpg 519w,
-portrait/jarrod-medrano_rxgtrq_c_scale,w_737.jpg 737w,
-portrait/jarrod-medrano_rxgtrq_c_scale,w_949.jpg 949w,
-portrait/jarrod-medrano_rxgtrq_c_scale,w_971.jpg 971w,
-portrait/jarrod-medrano_rxgtrq_c_scale,w_1289.jpg 1289w,
-portrait/jarrod-medrano_rxgtrq_c_scale,w_1400.jpg 1400w"
-              src="portrait/jarrod-medrano_rxgtrq_c_scale,w_1400.jpg"
+              src="portrait/jarrodmedrano.png"
               alt="Jarrod Medrano"
+              width="500"
+              height="500"
             />
           </picture>
         </div>
