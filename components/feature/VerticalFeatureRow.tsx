@@ -20,10 +20,11 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
         >
           <picture className={tw`absolute`}>
             <img
-              src="portrait/jarrodmedrano.png"
-              alt="Jarrod Medrano"
-              width="500"
-              height="500"
+              sizes="(max-width: 997px) 100vw, 997px"
+              srcSet="
+              portrait/jarrodmedrano_skqhty_ar_1_1,c_fill,g_auto__c_scale,w_200.png 200w,
+              portrait/jarrodmedrano_skqhty_ar_1_1,c_fill,g_auto__c_scale,w_997.png 997w"
+              src="portrait/jarrodmedrano_skqhty_ar_1_1,c_fill,g_auto__c_scale,w_997.png"
             />
           </picture>
         </div>
