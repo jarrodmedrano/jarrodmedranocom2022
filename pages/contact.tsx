@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Text } from "@nextui-org/react";
 import { tw } from "twind";
 
 const recaptchaRef = React.createRef();
@@ -32,19 +31,11 @@ const Contact = () => {
           message: data?.message?.trim(),
         }),
       });
-      setMessage(
-        <Text>
-          <Text small>Thanks for your message.</Text>
-        </Text>
-      );
+      setMessage(<p>Thanks for your message.</p>);
     } catch (err) {
       console.log("some error happened", err);
 
-      setMessage(
-        <Text>
-          <Text small>Oh no! You sank my battleship. Please try again.</Text>
-        </Text>
-      );
+      setMessage(<p>Oh no! You sank my battleship. Please try again.</p>);
       setLoading(false);
     }
     setLoading(false);
@@ -165,7 +156,7 @@ const Contact = () => {
           <ul>
             {Object.keys(errors).map((fieldName) => (
               <li key={fieldName} className="error">
-                <Text color="error">{`${errors[fieldName].message}`}</Text>
+                {`${errors[fieldName].message}`}
               </li>
             ))}
           </ul>
