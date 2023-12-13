@@ -1,28 +1,55 @@
-import sendgrid from "@sendgrid/mail";
+import fetch from "node-fetch";
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+const SENDGRID_API = "https://api.sendgrid.com/v3/mail/send";
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 
-async function sendEmail(req, res) {
-  try {
-    const response = await sendgrid.send({
-      to: "jarrod@jarrodmedrano.com", // Your email where you'll receive emails
-      from: "jarrod@jarrodmedrano.com", // your website email address here
-      subject: `Contact Submission from ${req.body.email}`,
-      html: JSON.stringify({
-        name: req.body.name,
-        email: req.body.email,
-        message: req.body.message,
-      }),
-    });
-    console.log("response", response);
-  } catch (error) {
-    console.log(error);
-    return res.status(error.statusCode || 500).json({ error: error.message });
-  }
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const msg = {
+  to: "jarrod@jarrodmedrano.com", // Change to your recipient
+  from: "jarrod@jarrodmedrano.com", // Change to your verified sender
+  subject: "Contact from jarrodmedrano.com",
+  html: `Message from ${email}: ${message}`,
+};
+sgMail
+  .send(msg)
+  .then(() => {
+    console.log("Email sent");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
-  console.log("res", res);
+const sendEmail = async ({ name, email, message }) => {
+  await fetch(SENDGRID_API, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${SENDGRID_API_KEY}`,
+    },
+    body: JSON.stringify({
+      personalizations: [
+        {
+          to: [
+            {
+              email: "jarrod@jarrodmedrano.com",
+            },
+          ],
+          subject: "Contact from jarrodmedrano.com",
+        },
+      ],
+      from: {
+        email: "jarrod@jarrodmedrano.com",
+        name: name,
+      },
+      content: [
+        {
+          type: "text/html",
+          value: `Message from ${email}: ${message}`,
+        },
+      ],
+    }),
+  });
+};
 
-  return res.status(200).json({ error: "" });
-}
-
-export default sendEmail;
+export { sendEmail };
