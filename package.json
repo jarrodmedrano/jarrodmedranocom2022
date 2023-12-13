@@ -33,9 +33,5 @@
     "@parcel/transformer-typescript-tsc": "^2.10.3",
     "eslint": "^8.55.0",
     "next-transpile-modules": "10.0.1"
-  },
-  "peerDependencies": {
-    "@babel/core": "^7.0.0",
-    "react": ">=16.8.0"
   }
 }
